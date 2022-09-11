@@ -1,11 +1,10 @@
 import bcrypt from 'bcryptjs';
 import prisma from '../../prisma/prisma-client';
-import { Role } from '@prisma/client';
-import generateToken from '../utils/token.utils';
-import { RegisterInput } from '../models/register-input.model';
 import HttpException from '../models/http-exception.model';
+import { RegisterInput } from '../models/register-input.model';
 import { RegisteredUser } from '../models/registered-user.model';
 import { User } from '../models/user.model';
+import generateToken from '../utils/token.utils';
 
 export async function login(
   email: string,
@@ -70,7 +69,6 @@ export async function createUser(
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const user = (await prisma.user.create({
-    // @ts-ignore
     data: {
       ...input,
       email,
