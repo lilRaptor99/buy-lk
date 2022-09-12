@@ -1,3 +1,4 @@
+import { Role } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import prisma from '../../prisma/prisma-client';
 import HttpException from '../models/http-exception.model';
@@ -52,7 +53,8 @@ async function checkUserUniqueness(email: string) {
 }
 
 export async function createUser(
-  input: RegisterInput
+  input: RegisterInput,
+  userType: Role
 ): Promise<RegisteredUser> {
   const email = input.email?.trim();
   const password = input.password?.trim();
@@ -71,6 +73,7 @@ export async function createUser(
   const user = (await prisma.user.create({
     data: {
       ...input,
+      role: userType,
       email,
       password: hashedPassword,
     },

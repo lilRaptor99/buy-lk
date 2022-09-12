@@ -38,4 +38,9 @@ export async function resetPassword(
   return true;
 }
 
-export function testFunction() {}
+export function getUserProfile(userId: string) {
+  const userDetails = prisma.user.findUnique({ where: { userId } });
+  if (!userDetails)
+    throw new HttpException(400, { errors: ['User account not found!'] });
+  return userDetails;
+}

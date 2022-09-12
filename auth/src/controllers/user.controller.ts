@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import { resetPassword } from '../services/user.service';
+import { getUserProfile, resetPassword } from '../services/user.service';
 
 const router = Router();
 
@@ -21,6 +21,22 @@ router.post(
       } else {
         res.json({ status: 'unsuccess' });
       }
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+/**
+ * Reset Password
+ */
+router.get(
+  '/profile',
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      // @ts-ignore
+      const { userId } = req.auth;
+      res.json(getUserProfile(userId));
     } catch (error) {
       next(error);
     }
