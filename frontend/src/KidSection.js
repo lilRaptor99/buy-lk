@@ -1,5 +1,8 @@
 import React from "react";
 import "./KidSection.css";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 
 export default function KidSection() {
   return (
@@ -29,7 +32,62 @@ export default function KidSection() {
       <div className="body">
         <div className="titleAndSearch">
           <div className="title">Kids Section</div>
-          <div className="search"></div>
+          <div className="search">
+            <input type="text" className="searchbar" placeholder="Search" />
+            <button className="searchbtn">Search</button>
+          </div>
+        </div>
+        <div className="itemListContainer">
+          <div className="table">
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+            <div className="rowContainer">
+              <div className="image"></div>
+              <div className="name">Toy car</div>
+              <div className="price">$30.00</div>
+              <div className="quantity">2 items</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
