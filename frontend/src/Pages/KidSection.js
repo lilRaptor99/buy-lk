@@ -1,112 +1,26 @@
 import React from "react";
 import "./KidSection.css";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ShoppingCart from "../components/ShoppingCart";
-import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import TitleAndSearch from "../components/TitleAndSearch";
+import ProductTable from "../components/product/ProductTable";
 
 export default function KidSection() {
+  const items = [
+    { name: "Toy Car", image: null, price: "$10.00", qty: 2 },
+    { name: "Toy Car1", image: null, price: "$30.00", qty: 2 },
+    { name: "Toy Car", image: null, price: "$30.00", qty: 5 },
+    { name: "Toy Car", image: null, price: "$30.00", qty: 2 },
+    { name: "Toy Car", image: null, price: "$30.00", qty: 2 },
+    { name: "Toy Car", image: null, price: "$30.00", qty: 2 },
+    { name: "Toy Car", image: null, price: "$30.00", qty: 2 },
+    { name: "Toy Car", image: null, price: "$30.00", qty: 2 },
+  ];
   return (
     <div className="main-container">
-      <div className="header">
-        <div className="logo">Logo here</div>
-        <div className="links">
-          <div className="unselected" id="home">
-            <Link to="/" className="nav-link active">
-              Home
-            </Link>
-          </div>
-          <div className="unselected" id="kids">
-            <Link to="/kids" className="nav-link active">
-              Kids
-            </Link>
-          </div>
-          <div className="unselected" id="gents">
-            Gents
-          </div>
-          <div className="unselected" id="women">
-            Women
-          </div>
-          <div className="unselected" id="women">
-            <Link to="/advertise" className="btn btn-outline-dark">
-              Adverties your Product
-            </Link>
-          </div>
-        </div>
-        <div>
-          <ShoppingCart cartItems={null} />
-        </div>
-        <div className="logout">
-          <button className="logoutbtn">
-            <div className="logoutBtnTxt">
-              <Link to="/" className="nav-link active">
-                Log out
-              </Link>
-            </div>
-          </button>
-        </div>
-      </div>
+      <Header />
+      <TitleAndSearch title="Kids Section" />
       <div className="body">
-        <div className="titleAndSearch">
-          <div className="title">Kids Section</div>
-          <div className="search">
-            <input type="text" className="searchbar" placeholder="Search" />
-            <button className="searchbtn">Search</button>
-          </div>
-        </div>
-        <div className="itemListContainer">
-          <div className="table">
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-            <div className="rowContainer">
-              <div className="image"></div>
-              <div className="name">Toy car</div>
-              <div className="price">$30.00</div>
-              <div className="quantity">2 items</div>
-            </div>
-          </div>
-        </div>
+        <ProductTable items={items} />
       </div>
     </div>
   );
