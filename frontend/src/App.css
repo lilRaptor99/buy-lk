@@ -1,8 +1,19 @@
+:root {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  --space-1: 8px;
+  --space-2: 14px;
+  --space-3: 24px;
+  --space-4: 38px;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
   /* background-color:aqua; */
 }
 
@@ -12,4 +23,452 @@
   width: 100%;
   height: 90%;
   /* background-color: aquamarine; */
+}
+
+.w-80 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: salmon;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+.btn-primary * {
+  color: aliceblue;
+  font-size: 16px;
+  text-decoration: none;
+}
+.btn-primary *:hover {
+  color: aliceblue;
+}
+
+.paragraph {
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.title-xl {
+  font-size: 55px;
+}
+
+.title-1 {
+  font-size: 36px;
+  line-height: 1.4;
+}
+
+.title-2 {
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.title-3 {
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.title-4 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+.title-5 {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.font-weight-thin {
+  font-weight: 100;
+}
+
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.font-weight-black {
+  font-weight: 900;
+}
+
+.text-gray-extra-light {
+  color: #e4e0e0;
+}
+
+.text-gray-light {
+  color: #9b9b9b;
+}
+
+.text-gray {
+  color: #666666;
+}
+
+.text-gray-dark {
+  color: #4f4f4f;
+}
+
+.text-dark {
+  color: #282828;
+}
+
+.text-blue {
+  color: #007afb;
+}
+
+.text-success {
+  color: #4bb543;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-red {
+  color: #dc3545;
+}
+
+.bg-gray {
+  background-color: #e6e6e6;
+}
+
+.bg-dark {
+  background-color: #2c2c2c;
+}
+
+.bg-dark-extra {
+  background-color: #202020;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-light {
+  background-color: #f3f3f3;
+}
+
+/* Alignment */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/*--------------------**
+**------ Margin ------**
+**--------------------*/
+.m0 {
+  margin: 0;
+}
+.mt0 {
+  margin-top: 0;
+}
+.mr0 {
+  margin-right: 0;
+}
+.mb0 {
+  margin-bottom: 0;
+}
+.ml0 {
+  margin-left: 0;
+}
+.mx0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.my0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.m1 {
+  margin: var(--space-1);
+}
+.mt1 {
+  margin-top: var(--space-1);
+}
+.mr1 {
+  margin-right: var(--space-1);
+}
+.mb1 {
+  margin-bottom: var(--space-1);
+}
+.ml1 {
+  margin-left: var(--space-1);
+}
+.mx1 {
+  margin-left: var(--space-1);
+  margin-right: var(--space-1);
+}
+.my1 {
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-1);
+}
+
+.m2 {
+  margin: var(--space-2);
+}
+.mt2 {
+  margin-top: var(--space-2);
+}
+.mr2 {
+  margin-right: var(--space-2);
+}
+.mb2 {
+  margin-bottom: var(--space-2);
+}
+.ml2 {
+  margin-left: var(--space-2);
+}
+.mx2 {
+  margin-left: var(--space-2);
+  margin-right: var(--space-2);
+}
+.my2 {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.m3 {
+  margin: var(--space-3);
+}
+.mt3 {
+  margin-top: var(--space-3);
+}
+.mr3 {
+  margin-right: var(--space-3);
+}
+.mb3 {
+  margin-bottom: var(--space-3);
+}
+.ml3 {
+  margin-left: var(--space-3);
+}
+.mx3 {
+  margin-left: var(--space-3);
+  margin-right: var(--space-3);
+}
+.my3 {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.m4 {
+  margin: var(--space-4);
+}
+.mt4 {
+  margin-top: var(--space-4);
+}
+.mr4 {
+  margin-right: var(--space-4);
+}
+.mb4 {
+  margin-bottom: var(--space-4);
+}
+.ml4 {
+  margin-left: var(--space-4);
+}
+.mx4 {
+  margin-left: var(--space-4);
+  margin-right: var(--space-4);
+}
+.my4 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.mxn1 {
+  margin-left: -var(--space-1);
+  margin-right: -var(--space-1);
+}
+.mxn2 {
+  margin-left: -var(--space-2);
+  margin-right: -var(--space-2);
+}
+.mxn3 {
+  margin-left: -var(--space-3);
+  margin-right: -var(--space-3);
+}
+.mxn4 {
+  margin-left: -var(--space-4);
+  margin-right: -var(--space-4);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*---------------------**
+**------ Padding ------**
+**---------------------*/
+
+.p0 {
+  padding: 0;
+}
+.pt0 {
+  padding-top: 0;
+}
+.pr0 {
+  padding-right: 0;
+}
+.pb0 {
+  padding-bottom: 0;
+}
+.pl0 {
+  padding-left: 0;
+}
+.px0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.py0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.p1 {
+  padding: var(--space-1);
+}
+.pt1 {
+  padding-top: var(--space-1);
+}
+.pr1 {
+  padding-right: var(--space-1);
+}
+.pb1 {
+  padding-bottom: var(--space-1);
+}
+.pl1 {
+  padding-left: var(--space-1);
+}
+.py1 {
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+}
+.px1 {
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+
+.p2 {
+  padding: var(--space-2);
+}
+.pt2 {
+  padding-top: var(--space-2);
+}
+.pr2 {
+  padding-right: var(--space-2);
+}
+.pb2 {
+  padding-bottom: var(--space-2);
+}
+.pl2 {
+  padding-left: var(--space-2);
+}
+.py2 {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+.px2 {
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+.p3 {
+  padding: var(--space-3);
+}
+.pt3 {
+  padding-top: var(--space-3);
+}
+.pr3 {
+  padding-right: var(--space-3);
+}
+.pb3 {
+  padding-bottom: var(--space-3);
+}
+.pl3 {
+  padding-left: var(--space-3);
+}
+.py3 {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+.px3 {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+.p4 {
+  padding: var(--space-4);
+}
+.pt4 {
+  padding-top: var(--space-4);
+}
+.pr4 {
+  padding-right: var(--space-4);
+}
+.pb4 {
+  padding-bottom: var(--space-4);
+}
+.pl4 {
+  padding-left: var(--space-4);
+}
+.py4 {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+.px4 {
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/*-------------------**
+**----- Layout ------**
+**-------------------*/
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.content-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+
+/* grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.col12 {
+  grid-column: 1/13;
 }

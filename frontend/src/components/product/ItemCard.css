@@ -6,7 +6,6 @@
   justify-content: space-evenly;
   margin-right: 10px;
   min-width: 200px;
-  height: 200px;
   margin-bottom: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
@@ -15,11 +14,13 @@
   width: 10px;
 }
 .image {
-  width: 80%;
-  height: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   align-self: center;
   background-color: beige;
   border-radius: 5px;
+  margin: 10px;
 }
 .name {
   width: 80%;
@@ -34,4 +35,11 @@
 .quantity {
   width: 80%;
   align-self: center;
+}
+
+.btn-add-to-cart {
+  height: 30px;
+  max-width: fit-content;
+  align-self: center;
+  margin: 10px;
 }

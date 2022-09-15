@@ -34,12 +34,10 @@ export default function Header() {
         <ShoppingCart cartItems={null} />
       </div>
       <div className="logout">
-        <button className="logoutbtn">
-          <div className="logoutBtnTxt">
-            <Link to="/" className="nav-link active">
-              Log out
-            </Link>
-          </div>
+        <button className="btn-primary">
+          <Link to="/" className="nav-link active">
+            Log out
+          </Link>
         </button>
       </div>
     </div>

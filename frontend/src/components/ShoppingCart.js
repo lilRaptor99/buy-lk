@@ -4,9 +4,15 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import CloseIcon from "@mui/icons-material/Close";
 import React, { useState } from "react";
 import "./ShoppingCart.css";
+import { useNavigate } from "react-router-dom";
+import { useShoppingCart } from "../contexts/ShoppingCartContext";
 
 export default function ShoppingCart({ cartItems }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const ShoppingCart = useShoppingCart();
 
   return (
     <div style={{ position: "relative" }}>
@@ -31,33 +37,44 @@ export default function ShoppingCart({ cartItems }) {
         className="cart-list-wrapper"
         style={{ display: isOpen ? "flex" : "none" }}
       >
-        <div className="cart-list-item">
-          <div className="cart-list-item-image"></div>
-          <div className="cart-list-item-data">
-            <div className="cart-list-item-name">
-              <span className="cart-list-item-name-qty">3 x </span> Kids T-Shirt
+        {ShoppingCart.cartItems.map((item) => (
+          <div className="cart-list-item" key={item.id}>
+            <div className="cart-list-item-image"></div>
+            <div className="cart-list-item-data">
+              <div className="cart-list-item-name">
+                <span className="cart-list-item-name-qty">
+                  {item.quantity} x{" "}
+                </span>{" "}
+                {item.name}
+              </div>
+              <div className="cart-list-item-price">
+                LKR {item.price.toFixed(2)}
+              </div>
             </div>
-            <div className="cart-list-item-price">$30.00</div>
+            <button
+              className="cart-list-item-remove"
+              onClick={() => {
+                ShoppingCart.removeFromCart(item.id);
+              }}
+            >
+              <CloseIcon style={{ fontSize: "15px" }} />
+            </button>
           </div>
-          <button className="cart-list-item-remove">
-            <CloseIcon style={{ fontSize: "15px" }} />
-          </button>
-        </div>
-        <div className="cart-list-item">
-          <div className="cart-list-item-image"></div>
-          <div className="cart-list-item-data">
-            <div className="cart-list-item-name">
-              <span className="cart-list-item-name-qty">1 x </span> Kids Toy
-            </div>
-            <div className="cart-list-item-price">$30.00</div>
-          </div>
-          <button className="cart-list-item-remove">
-            <CloseIcon style={{ fontSize: "15px" }} />
-          </button>
-        </div>
+        ))}
 
         <div className="cart-list-checkout-btn-wrapper">
-          <button className="cart-list-checkout-btn">Checkout</button>
+          {ShoppingCart.cartItems.length > 0 ? (
+            <button
+              className="cart-list-checkout-btn"
+              onClick={() => {
+                navigate("/checkout");
+              }}
+            >
+              Checkout
+            </button>
+          ) : (
+            <div className="cart-list-checkout-btn">Cart is empty</div>
+          )}
         </div>
       </div>
     </div>

@@ -1,0 +1,16 @@
+.checkout-item-image {
+  height: 80px;
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.checkout-table-header-cell {
+  font-weight: bold;
+  font-size: 1.08rem;
+}
+.checkout-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

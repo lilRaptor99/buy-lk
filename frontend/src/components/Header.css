@@ -36,17 +36,3 @@
   height: 100%;
   /* background-color: blueviolet; */
 }
-.logoutbtn {
-  display: flex;
-  border: none;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  background-color: salmon;
-  width: 50%;
-  height: 60%;
-}
-.logoutBtnTxt {
-  color: aliceblue;
-  font-size: 15px;
-}
