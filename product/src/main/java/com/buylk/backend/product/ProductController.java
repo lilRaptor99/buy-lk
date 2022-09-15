@@ -41,4 +41,9 @@ public class ProductController {
                 product.getQuantity()
         );
     }
+
+    @PutMapping(path = "updateQuantity")
+    public void updateQuantity(@RequestBody List<ProductPurchase> productPurchase){
+        productService.updateQuantity(productPurchase);
+    }
 }
