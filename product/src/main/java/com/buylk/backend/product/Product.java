@@ -18,7 +18,7 @@ class Product {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_sequence")
     private Long id;
     private String name;
-    private String description;
     private double price;
+    private String productType;
     private long quantity;
 }
