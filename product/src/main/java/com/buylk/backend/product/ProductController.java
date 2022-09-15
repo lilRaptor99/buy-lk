@@ -21,6 +21,10 @@ public class ProductController {
         return productService.getProducts();
     }
 
+    @GetMapping(path="{productType}")
+    public List<Product> getProductByType(@PathVariable String productType) {
+        return productService.getProductByType(productType);
+    }
     @PostMapping(path="add")
     public void addNewProduct(@RequestBody Product product) {
         productService.addNewProduct(product);
@@ -32,8 +36,8 @@ public class ProductController {
         productService.updateProduct(
                 productId,
                 product.getName(),
-                product.getDescription(),
                 product.getPrice(),
+                product.getProductType(),
                 product.getQuantity()
         );
     }

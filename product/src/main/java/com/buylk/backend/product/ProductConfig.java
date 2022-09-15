@@ -15,14 +15,30 @@ public class ProductConfig {
                     List.of(
                             new Product(null,
                                     "Product 1",
-                                    "Product 1 desc",
                                     100.0,
+                                    "kids",
                                     44),
                             new Product(null,
                                     "Product 2",
-                                    "Product 2 desc",
                                     200.0,
+                                    "gents",
+                                    5),
+                            new Product(null,
+                                    "Product 3",
+                                    200.0,
+                                    "gents",
+                                    5),
+                            new Product(null,
+                                    "Product 4",
+                                    200.0,
+                                    "kids",
+                                    5),
+                            new Product(null,
+                                    "Product 5",
+                                    200.0,
+                                    "women",
                                     5)
+
                     )
             );
         };

@@ -25,15 +25,19 @@ public class ProductService {
     }
 
     @Transactional
-    public void updateProduct(long productId, String name, String description,
-                              double price, long quantity) {
+    public void updateProduct(long productId, String name,
+                              double price,String productType, long quantity) {
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new IllegalArgumentException(
                         "Product" + " with id " + productId + " does not exist"
                 ));
         product.setName(name);
-        product.setDescription(description);
         product.setPrice(price);
+        product.setProductType(productType);
         product.setQuantity(quantity);
+    }
+
+    public List<Product> getProductByType(String productType) {
+        return productRepository.findByProductType(productType);
     }
 }
