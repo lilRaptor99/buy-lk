@@ -103,12 +103,8 @@
   justify-content: right;
 }
 .cart-list-checkout-btn {
-  border: none;
-  cursor: pointer;
-  color: white;
   border-radius: 5px;
   margin-top: 5px;
   padding: 6px 10px 6px 10px;
-  background-color: salmon;
   font-size: 0.8rem;
 }

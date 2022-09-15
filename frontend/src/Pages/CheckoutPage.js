@@ -10,33 +10,30 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
+import { useShoppingCart } from "../contexts/ShoppingCartContext";
+import DeleteIcon from "@mui/icons-material/Delete";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 
 const TAX_RATE = 0.15;
 
-function ccyFormat(num) {
-  return `${num.toFixed(2)}`;
-}
-
-function createRow(image, desc, unit, qty) {
-  const price = qty * unit;
-  return { image, desc, qty, unit, price };
-}
-
-function subtotal(items) {
-  return items.map(({ price }) => price).reduce((sum, i) => sum + i, 0);
-}
-
-const rows = [
-  createRow(null, "Item 1", 1.15, 100),
-  createRow(null, "Item 2", 45.99, 10),
-  createRow(null, "Item 3", 17.99, 2),
-];
-
-const invoiceSubtotal = subtotal(rows);
-const invoiceTaxes = TAX_RATE * invoiceSubtotal;
-const invoiceTotal = invoiceTaxes + invoiceSubtotal;
-
 export default function CheckoutPage() {
+  const ShoppingCart = useShoppingCart();
+
+  function ccyFormat(num) {
+    return `${num.toFixed(2)}`;
+  }
+
+  function subtotal() {
+    return ShoppingCart.cartItems
+      .map(({ price, quantity }) => price * quantity)
+      .reduce((sum, i) => sum + i, 0);
+  }
+
+  const invoiceSubtotal = subtotal();
+  const invoiceTaxes = TAX_RATE * invoiceSubtotal;
+  const invoiceTotal = invoiceTaxes + invoiceSubtotal;
+
   return (
     <div className="main-container">
       <Header />
@@ -55,7 +52,7 @@ export default function CheckoutPage() {
                 <TableCell align="right">
                   <span className="checkout-table-header-cell">Unit price</span>
                 </TableCell>
-                <TableCell align="right">
+                <TableCell>
                   <span className="checkout-table-header-cell">Qty. </span>
                 </TableCell>
                 <TableCell align="right">
@@ -66,15 +63,51 @@ export default function CheckoutPage() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
-                <TableRow key={row.desc}>
+              {ShoppingCart.cartItems.map((item) => (
+                <TableRow key={item.id}>
                   <TableCell>
                     <div className="checkout-item-image"></div>
                   </TableCell>
-                  <TableCell>{row.desc}</TableCell>
-                  <TableCell align="right">{row.unit}</TableCell>
-                  <TableCell align="right">{row.qty}</TableCell>
-                  <TableCell align="right">{ccyFormat(row.price)}</TableCell>
+                  <TableCell>
+                    <div className="d-flex align-center space-between">
+                      <span>{item.name}</span>
+                      <button
+                        className="delete-btn"
+                        onClick={() => {
+                          ShoppingCart.removeFromCart(item.id);
+                        }}
+                      >
+                        <DeleteIcon style={{ fontSize: "15px" }} />
+                      </button>
+                    </div>
+                  </TableCell>
+                  <TableCell align="right">{ccyFormat(item.price)}</TableCell>
+                  <TableCell align="right">
+                    <div className="d-flex flex-column align-center space-between">
+                      <div>{item.quantity}</div>
+                      <div className="d-flex">
+                        <button
+                          className="inc-btn"
+                          onClick={() => {
+                            ShoppingCart.decrementQuantity(item.id);
+                          }}
+                        >
+                          <RemoveIcon style={{ fontSize: "15px" }} />
+                        </button>
+                        <button
+                          className="inc-btn"
+                          onClick={() => {
+                            ShoppingCart.incrementQuantity(item.id);
+                          }}
+                        >
+                          <AddIcon style={{ fontSize: "15px" }} />
+                        </button>
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell align="right">
+                    {ccyFormat(item.price * item.quantity)}
+                  </TableCell>
                 </TableRow>
               ))}
 
@@ -107,9 +140,15 @@ export default function CheckoutPage() {
           </Table>
         </TableContainer>
         <div className="checkout-btn-container">
-          <button className="btn-primary mt3">
-            <Link to="/">Buy now</Link>
-          </button>
+          {ShoppingCart.cartItems.length > 0 ? (
+            <button className="btn-primary mt3">
+              <Link to="/">Buy now</Link>
+            </button>
+          ) : (
+            <button className="btn-primary mt3" disabled>
+              <Link to="/">Buy now</Link>
+            </button>
+          )}
         </div>
       </div>
     </div>

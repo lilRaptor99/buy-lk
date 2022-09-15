@@ -36,6 +36,7 @@ export function ShoppingCartProvider({ children }) {
         if (item.id === itemId) {
           item.quantity++;
         }
+        return item;
       });
     });
   }
@@ -46,6 +47,7 @@ export function ShoppingCartProvider({ children }) {
         if (item.id === itemId) {
           item.quantity--;
         }
+        return item;
       });
     });
   }
@@ -56,6 +58,7 @@ export function ShoppingCartProvider({ children }) {
         if (item.id === itemId) {
           item.quantity = quantity;
         }
+        return item;
       });
     });
   }

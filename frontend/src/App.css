@@ -49,6 +49,33 @@
   color: aliceblue;
 }
 
+.btn-outlined {
+  display: flex;
+  border: 1px solid salmon;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+
+.btn-disabled {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+  padding: 12px 16px;
+}
+.btn-disabled * {
+  color: aliceblue;
+  font-size: 16px;
+  text-decoration: none;
+}
+
 .paragraph {
   font-weight: 300;
   line-height: 1.4;
@@ -456,6 +483,9 @@
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.space-between {
+  justify-content: space-between;
 }
 .content-center {
   justify-content: center;

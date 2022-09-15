@@ -14,3 +14,31 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+.delete-btn {
+  background-color: transparent;
+  height: 30px;
+  color: #f44336;
+  font-size: 2rem;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inc-btn {
+  background-color: transparent;
+  height: 25px;
+  color: black;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

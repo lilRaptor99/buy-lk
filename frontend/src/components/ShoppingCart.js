@@ -7,7 +7,7 @@ import "./ShoppingCart.css";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
 
-export default function ShoppingCart({ cartItems }) {
+export default function ShoppingCart() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ export default function ShoppingCart({ cartItems }) {
         <div className="cart-list-checkout-btn-wrapper">
           {ShoppingCart.cartItems.length > 0 ? (
             <button
-              className="cart-list-checkout-btn"
+              className="cart-list-checkout-btn btn-primary"
               onClick={() => {
                 navigate("/checkout");
               }}
@@ -73,7 +73,9 @@ export default function ShoppingCart({ cartItems }) {
               Checkout
             </button>
           ) : (
-            <div className="cart-list-checkout-btn">Cart is empty</div>
+            <div className="cart-list-checkout-btn btn-disabled">
+              Cart is empty
+            </div>
           )}
         </div>
       </div>

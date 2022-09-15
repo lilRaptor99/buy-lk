@@ -7,7 +7,7 @@ export default function ProductTable({ items }) {
     <div className="itemListContainer">
       <div className="itemsTable">
         {items.map((item) => (
-          <ItemCard item={item} />
+          <ItemCard item={item} key={item.id} />
         ))}
       </div>
     </div>
