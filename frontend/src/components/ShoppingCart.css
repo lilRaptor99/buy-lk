@@ -61,9 +61,9 @@
 .cart-list-item-image {
   height: 60px;
   width: 60px;
-  border: 1px solid black;
   border-radius: 5px;
   object-fit: cover;
+  object-position: top;
 }
 .cart-list-item-name {
   max-width: 95px;

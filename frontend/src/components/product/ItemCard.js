@@ -6,10 +6,12 @@ export default function ItemCard({ item }) {
   const ShoppingCart = useShoppingCart();
   return (
     <div className="rowContainer">
-      <div className="image"></div>
+      <div className="image-container">
+        <img className="image" src={item.imageUrl} alt={item.name} />
+      </div>
       <div className="name">{item.name}</div>
       <div className="price">LKR {item.price.toFixed(2)}</div>
-      <div className="quantity">{item.availableQuantity} items</div>
+      <div className="quantity">{item.quantity} items</div>
       <button
         className="btn-primary btn-add-to-cart"
         onClick={() => {

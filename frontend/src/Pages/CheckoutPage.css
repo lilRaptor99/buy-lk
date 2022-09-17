@@ -1,9 +1,9 @@
 .checkout-item-image {
   height: 80px;
   width: 80px;
-  border: 1px solid black;
   border-radius: 5px;
   object-fit: cover;
+  object-position: top;
 }
 .checkout-table-header-cell {
   font-weight: bold;

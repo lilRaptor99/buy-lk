@@ -1,56 +1,56 @@
-.landingpage-main-container{
-    width: 100%;
-    height: 100vh;
-    /* background-color:beige; */
-    margin-top:70px
+.landingpage-main-container {
+  width: 100%;
+  height: 100vh;
+  /* background-color:beige; */
+  margin-top: 70px;
 }
-.container-fluid{
-    margin-left:20%;
+.container-fluid {
+  margin-left: 20%;
 }
-.landingpage-body{
-    width: 100%;
-    height: 100%;
+.landingpage-body {
+  width: 100%;
+  height: 100%;
 }
-.navbar{
-    width: 100%;
-    height:70px;
+.navbar {
+  width: 100%;
+  height: 70px;
 }
-.navbar-nav{
- width:40%;
- justify-content:space-around;
+.navbar-nav {
+  width: 40%;
+  justify-content: space-around;
 }
 .carousel-caption {
-    max-width: 550px;
-    padding: 0 20px;
-    margin:0 auto;
-    margin-bottom: 25%;
-    text-align:center;
+  max-width: 550px;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-bottom: 25%;
+  text-align: center;
 }
-.carousel-caption{
-    font-size: xx-large;
-    font-family:  "Lucida Handwriting", monospace;
+.carousel-caption {
+  font-size: xx-large;
+  font-family: "Lucida Handwriting", monospace;
 }
-.carousel-caption h1{
-    color :beige;
-    font-weight: 700;
+.carousel-caption h1 {
+  color: beige;
+  font-weight: 700;
 }
-.btn-Shop{
-    border: solid beige;
-    border-width:2%;
-    background-color:transparent;
-    width: 200px;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    border-radius: 0.5rem;
-    color: white;
-    text-decoration: none;
+.btn-Shop {
+  border: solid beige;
+  border-width: 2%;
+  background-color: transparent;
+  width: 200px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
 }
-.btn-Shop p1{
-    font-size:x-large;
-    font-weight:bolder;
+.btn-Shop p1 {
+  font-size: x-large;
+  font-weight: bolder;
 }
-.btn-Shop:hover{
-    /* background-color:beige; */
-    border-color:black;
-    color:black;
+.btn-Shop:hover {
+  /* background-color:beige; */
+  border-color: black;
+  color: black;
 }

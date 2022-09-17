@@ -39,7 +39,7 @@ export default function ShoppingCart() {
       >
         {ShoppingCart.cartItems.map((item) => (
           <div className="cart-list-item" key={item.id}>
-            <div className="cart-list-item-image"></div>
+            <img className="cart-list-item-image" src={item.imageUrl} />
             <div className="cart-list-item-data">
               <div className="cart-list-item-name">
                 <span className="cart-list-item-name-qty">

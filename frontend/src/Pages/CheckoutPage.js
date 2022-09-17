@@ -66,7 +66,7 @@ export default function CheckoutPage() {
               {ShoppingCart.cartItems.map((item) => (
                 <TableRow key={item.id}>
                   <TableCell>
-                    <div className="checkout-item-image"></div>
+                    <img className="checkout-item-image" src={item.imageUrl} />
                   </TableCell>
                   <TableCell>
                     <div className="d-flex align-center space-between">

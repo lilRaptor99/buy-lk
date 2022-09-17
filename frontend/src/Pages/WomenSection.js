@@ -5,18 +5,14 @@ import TitleAndSearch from "../components/TitleAndSearch";
 import ProductTable from "../components/product/ProductTable";
 import request from "../utils/request";
 
-export default function KidSection() {
+export default function WomenSection() {
   const [items, setItems] = React.useState([]);
 
   React.useEffect(() => {
     (async () => {
       try {
-        const res = await request("get", "/product/kids", null);
-        let data = res.data;
-        data.splice(1, 1);
-        console.log("data", data);
-
-        setItems(data);
+        const res = await request("get", "/product/women", null);
+        setItems(res.data);
       } catch (error) {
         console.log("Failed to fetch products");
       }
@@ -25,7 +21,7 @@ export default function KidSection() {
   return (
     <div className="main-container">
       <Header />
-      <TitleAndSearch title="Kids Section" />
+      <TitleAndSearch title="Women Section" />
       <div className="body">
         <ProductTable items={items} />
       </div>
