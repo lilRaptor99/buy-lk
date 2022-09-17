@@ -7,12 +7,14 @@ import request from "../utils/request";
 
 export default function GentSection() {
   const [items, setItems] = React.useState([]);
+  const [allItems, setAllItems] = React.useState([]);
 
   React.useEffect(() => {
     (async () => {
       try {
         const res = await request("get", "/product/gents", null);
         setItems(res.data);
+        setAllItems(res.data);
       } catch (error) {
         console.log("Failed to fetch products");
       }
@@ -22,7 +24,11 @@ export default function GentSection() {
   return (
     <div className="main-container">
       <Header />
-      <TitleAndSearch title="Gents Section" setItems={setItems} />
+      <TitleAndSearch
+        title="Gents Section"
+        allItems={allItems}
+        setItems={setItems}
+      />
       <div className="body">
         <ProductTable items={items} />
       </div>
