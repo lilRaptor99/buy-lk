@@ -65,4 +65,14 @@ public class ProductService {
                 }
         );
     }
+
+    public void deleteItem(Long id) {
+        productRepository.findById(id);
+        boolean exists=productRepository.existsById(id);
+        if(!exists){
+            throw new IllegalStateException("product "+id+"does not exists");
+        }else{
+            productRepository.deleteById(id);
+        }
+    }
 }

@@ -4,6 +4,9 @@
 .card{
     width:80%;
 }
+.card-img-top{
+    height:400px
+}
 .form-details{
     width:60%;
 }
