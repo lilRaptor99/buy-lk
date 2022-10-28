@@ -27,6 +27,7 @@ public class ProductController {
     }
     @PostMapping(path="add")
     public void addNewProduct(@RequestBody Product product) {
+        System.out.println(product);
         productService.addNewProduct(product);
     }
 
@@ -45,5 +46,10 @@ public class ProductController {
     @PutMapping(path = "updateQuantity")
     public void updateQuantity(@RequestBody List<ProductPurchase> productPurchase){
         productService.updateQuantity(productPurchase);
+    }
+    @PostMapping(path = "/delete/{productId}")
+    public void deleteItem(@PathVariable("productId") Long id){
+        System.out.println("del product "+ id);
+        productService.deleteItem(id);
     }
 }
