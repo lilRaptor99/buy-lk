@@ -9,16 +9,16 @@
                 <endpoint key="UsersHttpEP"/>
                 <source type="body"/>
             </call>
-            <respond description="Send Response Back to Client"/>
+            <respond description="Respond"/>
         </inSequence>
         <outSequence/>
         <faultSequence/>
     </resource>
-    <resource methods="GET" url-mapping="/product">
+    <resource methods="HEAD DELETE POST GET OPTIONS PUT PATCH" url-mapping="/product/*">
         <inSequence>
-            <call>
+            <call description="Call product service endpoint">
                 <endpoint>
-                    <http method="get" uri-template="http://localhost:8080/api/product">
+                    <http uri-template="http://localhost:8080/api/">
                         <suspendOnFailure>
                             <initialDuration>-1</initialDuration>
                             <progressionFactor>-1</progressionFactor>
@@ -30,7 +30,37 @@
                     </http>
                 </endpoint>
             </call>
-            <respond/>
+            <respond description="Respond"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="OPTIONS POST" uri-template="/send-email">
+        <inSequence>
+            <filter description="Authnticate Backend Service" regex=".*1234.*" source="Auth">
+                <then>
+                    <call>
+                        <endpoint>
+                            <http method="post" uri-template="http://localhost:8282/api/send-email">
+                                <suspendOnFailure>
+                                    <initialDuration>-1</initialDuration>
+                                    <progressionFactor>-1</progressionFactor>
+                                    <maximumDuration>0</maximumDuration>
+                                </suspendOnFailure>
+                                <markForSuspension>
+                                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                </markForSuspension>
+                            </http>
+                            <description>Email</description>
+                        </endpoint>
+                    </call>
+                    <respond description="Respond"/>
+                </then>
+                <else>
+                    <log category="WARN" level="full"/>
+                    <drop/>
+                </else>
+            </filter>
         </inSequence>
         <outSequence/>
         <faultSequence/>
